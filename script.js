@@ -1,4 +1,4 @@
-import { morseCode } from "./morse.js";
+import { morseCode, englishDictionary } from "./morse.js";
 
 const inputBox = document.querySelector(".display--input");
 const outputBox = document.querySelector(".display--output");
@@ -42,3 +42,11 @@ export const clearAll = () => {
 clearButton.addEventListener("click", clearAll);
 
 
+export const morseToEnglish = (morseStr) => {
+    //convert string to array
+    const englishTrans = morseStr.toUpperCase().split("").map((key) => {
+        return englishDictionary[key];
+    })
+    //convert array to string,separated by space" "
+    return englishTrans.join(" ");
+}

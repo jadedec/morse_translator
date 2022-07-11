@@ -56,3 +56,7 @@ export const morseCode = {
     "¡": "--...-"
 }
 
+// export const englishDictionary = Object.entries(morseCode).reduce((newDic, [key, value]) => {
+//     newDic[`${value}`] = key;
+//     return newDic;
+// })
