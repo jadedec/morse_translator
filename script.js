@@ -41,7 +41,8 @@ export const clearAll = () => {
 }
 clearButton.addEventListener("click", clearAll);
 
-
+//not finished yet 
+//function built but englishDictionary didn't build
 export const morseToEnglish = (morseStr) => {
     //convert string to array
     const englishTrans = morseStr.toUpperCase().split("").map((key) => {
