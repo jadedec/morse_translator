@@ -9,5 +9,5 @@ web.
 
 allow users to type English words/sentences into an input box and receive the morse code translation.
 
-TO DO:  
-translate morse code to English( function built, dictionary not)
+extension:  
+morseCode to English
