@@ -2,32 +2,43 @@ import { morseCode } from "./morse.js";
 
 const inputBox = document.querySelector(".display--input");
 const outputBox = document.querySelector(".display--output");
-const toEnglishButton = document.querySelector(".button--morseToEnglish");
-const toMorseButton = document.querySelector(".button--englishToMorse");
+const translateButton = document.querySelector(".button--translate");
 const clearButton = document.querySelector(".button--clear");
 
 //english to morse function
-const englishToMorse = (englishStr) => {
+export const englishToMorse = (englishStr) => {
     //convert string to array
     const morseTrans = englishStr.toUpperCase().split("").map((key) => {
         return morseCode[key];
     })
-    //convert array to string,separated by "/""
-    return morseTrans.join("/");
+    //convert array to string,separated by space" "
+    return morseTrans.join(" ");
 }
 
-//page change by click
-const handleEnglishToMorse = () => {
-    const result = englishToMorse(inputBox.value);
+//Confirm translation type
+export const handleTranslate = (event) => {
+    const content = inputBox.value;
+    let result = "";
+    if (content === "") {
+        result = "Please enter the content to be translated";
+    }
+    else if (content.includes("/(.-)/g")) {
+        result = morseToEnglish(content);
+    }
+    else {
+        result = englishToMorse(content);
+    }
     outputBox.innerHTML = result;
 }
 //add event listener to the button
-toMorseButton.addEventListener("click", handleEnglishToMorse);
+translateButton.addEventListener("click", handleTranslate);
 
 
 //clear button
-const clearAll = () => {
+export const clearAll = () => {
     inputBox.value = "";
     outputBox.innerHTML = "";
 }
 clearButton.addEventListener("click", clearAll);
+
+
