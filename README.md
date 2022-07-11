@@ -11,3 +11,6 @@ allow users to type English words/sentences into an input box and receive the mo
 
 extension:  
 morseCode to English
+
+TO DO:
+tests cannot run by now
