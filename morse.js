@@ -56,7 +56,12 @@ export const morseCode = {
     "¡": "--...-"
 }
 
-// export const englishDictionary = Object.entries(morseCode).reduce((newDic, [key, value]) => {
-//     newDic[`${value}`] = key;
-//     return newDic;
-// })
+const swap = (obj) => {
+    const swapped = Object.entries(obj).map(
+        ([key, value]) => [value, key]
+    );
+    return Object.fromEntries(swapped);
+}
+
+export const englishDictionary = swap(morseCode);
+console.log(englishDictionary);
